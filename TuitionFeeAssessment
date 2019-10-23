@@ -1,0 +1,308 @@
+#include <iostream.h>
+#include <conio.h>
+#include <cstring.h>
+
+//screens
+void startup(), infoScreen(), courseScreen(), tuitionScreen(), finishScreen(), exitapp();
+//screen switches
+int pil, pili, pilig, piling, pilings;
+//selection switches
+int coursePili, tuitionPili;
+int tFee, dcount, kwenta, kwentas;
+float dcounts;
+string inputName, inputId; 
+string cName, dcountName;
+
+main(){
+	startup();
+}
+
+void startup(){
+	clrscr();
+	system("COLOR F0");
+	
+	cout<<" "<<endl;
+	cout<<" ******************************************************************************\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                               Welcome to                                   *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                        TUITION FEE ASSESSMENT PROGRAM                      *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                   :>                                       *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                              *Select Number*                               *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                1. Start                                    *\n";
+	cout<<" *                                2. Exit                                     *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" ******************************************************************************\n";
+	cout<<"           Enter selected number here: ";cin>>pil;
+	
+	switch(pil){
+		case 1:
+		infoScreen();
+		break;
+		
+		case 2:
+		exitapp();
+		break;
+		
+		default:
+		startup();
+		break;
+	}
+}
+
+void exitapp(){
+	clrscr();
+	
+	system("COLOR 4F");
+	cout<<" \n";
+	cout<<" ******************************************************************************\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                         THIS PROGRAM IS NOW EXIT                           *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                     THANK YOU FOR USING THIS PROGRAM!!!                    *\n";
+	cout<<" *                                GOOD DAY!!!                                 *\n";
+	cout<<" *                                   :>                                       *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *     Created By: Fahad Abdullatif Vallo                                     *\n";
+	cout<<" *                 Karlvience Villanueva                                      *\n";
+	cout<<" *                 James Martin Lacayanga                                     *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" ******************************************************************************\n\n";
+	cout<<" just press any key :> ";
+	getch();
+}
+
+void infoScreen(){
+	clrscr();
+	system("COLOR F0");
+	cout<<"   \n";
+	cout<<" ******************************************************************************\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                           TUITION FEE ASSESSMENT                           *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                         Enter your Information Below                       *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                   :>                                       *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" ******************************************************************************\n\n"; 
+	cout<<"   Enter IDNo.: ";getline(cin, inputId);
+	cout<<"   Enter Name : ";getline(cin, inputName);
+	cout<<"   \n\n";
+	cout<<" ******************************************************************************\n\n";
+	cout<<" Next? 1.Yes/2.Retry/3.Exit: ";cin>>pili;
+	
+	switch(pili){
+		case 1:
+		courseScreen();
+		break;
+		
+		case 3:
+		exitapp();
+		break;
+		
+		default:
+		infoScreen();
+		break;
+	}
+}
+
+void courseScreen(){
+	clrscr();
+	system("COLOR F0");
+	cout<<"  \n";
+	cout<<"                          ID Number: "<<inputId<<endl;
+	cout<<"                          WELCOME, "<<inputName<<endl;
+	cout<<" ******************************************************************************\n";
+	cout<<" *                       CHOOSE COURSE YOU WANT HERE!!                        *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                 COURSE                      TUITION FEE                    *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                 1. EDUC  ...................  10,000                       *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                 2. CBA   ...................  11,000                       *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                 3. CICS  ...................  12,000                       *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                 4. HRS   ...................  13,000                       *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" ******************************************************************************\n";
+	cout<<"  ENTER YOUR CHOICE: ";cin>>coursePili;
+
+		switch (coursePili){
+			case 1:
+			cName = "EDUC";
+			tFee = 10000;
+			break;
+			case 2:
+			cName = "CBA";
+			tFee = 11000;
+			break;
+			case 3:
+			cName = "CICS";
+			tFee = 12000;
+			break;
+			case 4:
+			cName = "HRS";
+			tFee = 13000;
+			break;
+			default:
+			courseScreen();
+			break;
+		}
+	cout<<" ******************************************************************************\n";
+	cout<<"             Course: "<<cName<<endl;
+	cout<<"        Tuition Fee: "<<tFee<<endl;
+	cout<<" ******************************************************************************\n";
+	cout<<"  Next? 1.Yes/2.Retry/3.Exit: ";cin>>pilig;
+	
+	switch(pilig){
+		case 1:
+		tuitionScreen();
+		break;
+		
+		case 3:
+		exitapp();
+		break;
+		
+		default:
+		courseScreen();
+		break;
+	}
+}
+
+void tuitionScreen(){
+	clrscr();
+	system("COLOR F0");
+	cout<<"  \n";
+	cout<<"                          COURSE: "<<cName<<endl;
+	cout<<"                          TUITION FEE: "<<tFee<<endl;
+	cout<<" ******************************************************************************\n";
+	cout<<" *                   CHOOSE SCHOLARSHIP GRANT YOU WANT HERE!!                 *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                 SCHOLARSHIP GRANT                  DISCOUNT                *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                 1. ACADEMIC ONE  ................... 100%                  *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                 2. ACADEMIC TWO  ................... 75%                   *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                 3. ICF           ................... 50%                   *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                 4. TAPSA         ................... 30%                   *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" *                 5. REGULAR       ................... NO DISCOUNT           *\n";
+	cout<<" *                                                                            *\n";
+	cout<<" ******************************************************************************\n";
+	cout<<"  ENTER YOUR CHOICE: ";cin>>tuitionPili;
+	
+	switch (tuitionPili){
+		case 1:
+		dcountName = "Academic One";
+		dcount = 100;
+		dcounts = 1;
+		break;
+		
+		case 2:
+		dcountName = "Academic Two";
+		dcount = 75;
+		dcounts = 0.75;
+		break;
+		
+		case 3:
+		dcountName = "ICF";
+		dcount = 50;
+		dcounts = 0.50;
+		break;
+		
+		case 4:
+		dcountName = "TAPSA";
+		dcount = 30;
+		dcounts = 0.30;
+		break;
+		
+		case 5:
+		dcountName = "REGULAR";
+		dcount = 0;
+		dcounts = 0;
+		break;
+		
+		default:
+		tuitionScreen();
+		break;
+	}
+	cout<<" ******************************************************************************\n";
+	cout<<"      Scholarship Type: "<<dcountName<<endl;
+	cout<<"              Discount: "<<dcount<<"%"<<endl;
+	cout<<" ******************************************************************************\n";
+	cout<<"  Next? 1.Yes/2.Retry/3.Exit: ";cin>>piling;
+	
+	switch(piling){
+		case 1:
+		finishScreen();
+		break;
+		
+		case 3:
+		exitapp();
+		break;
+		
+		default:
+		tuitionScreen();
+		break;
+	}
+	getch();
+}
+
+void finishScreen(){
+	
+	kwenta = tFee * dcounts;
+	kwentas = tFee - kwenta;
+	
+	clrscr();
+	system("COLOR 0A");
+	cout<<"  \n\n";
+	cout<<" ******************************************************************************\n\n";
+	cout<<"          Student No.: "<<inputId<<endl<<endl;
+	cout<<"         Student Name: "<<inputName<<endl<<endl;
+	cout<<"               Course: "<<cName<<endl<<endl;
+	cout<<"          Tuition Fee: "<<tFee<<endl<<endl;
+	cout<<"          Scholarship: "<<dcountName<<endl<<endl;
+	cout<<"             Discount: "<<dcount<<"%"<<endl<<endl;
+	cout<<"    Total Tuition Fee: "<<kwentas<<endl<<endl<<endl;
+	cout<<" ******************************************************************************\n\n\n\n";
+	cout<<" 1. Try Again/2. Exit Program"<<endl;
+	cout<<" Enter your Choice: ";cin>>pilings;
+	
+	switch(pilings){
+		case 1:
+		infoScreen();
+		break;
+		
+		case 2:
+		exitapp();
+		break;
+		
+		default:
+		finishScreen();
+		break;
+	}
+	getch();
+}
